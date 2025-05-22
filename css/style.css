@@ -3,26 +3,27 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #0f2a13; /* verde escuro */
+  background-color: 		#222222; /* verde escuro */
   color: #d1d5db;            /* cinza claro */
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #065f46, #22c55e); /* verde escuro para verde limão */
+  background: linear-gradient(90deg, #1f3736, #0e5a27); /* verde escuro para verde limão */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .card {
-  background-color: #1f2937; /* cinza grafite */
+  background-color: #222222; /* cinza grafite */
   border-radius: 0.75rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(34, 197, 94, 0.3); /* sombra verde suave */
+  background-color: #1f3736;
+  transform: translateY(-7px);
+  box-shadow: 3px #25504a; /* sombra verde suave */
 }
 
 /* Utilitários simples */
