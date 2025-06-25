@@ -8,9 +8,10 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #1f3736, #0e5a27); /* verde escuro para verde limão */
+  background: linear-gradient(90deg, #f1f1f1, #25504a, #162c2a ); /* verde escuro para verde limão */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
 }
 
 .card {
