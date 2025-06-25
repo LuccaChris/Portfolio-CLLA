@@ -21,20 +21,13 @@ body {
 }
 
 .card:hover {
-  background-color: #1f3736;
+  
   transform: translateY(-7px);
-  box-shadow: 3px #25504a; /* sombra verde suave */
+  box-shadow: 3px #25504a;
+
 }
 
-/* Utilitários simples */
-a {
-  color: #86efac; /* verde claro */
-  text-decoration: none;
-}
 
-a:hover {
-  color: #4ade80; /* verde mais vivo ao passar o mouse */
-}
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
