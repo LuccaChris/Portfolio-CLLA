@@ -27,12 +27,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const contactForm = document.querySelector('form') as HTMLFormElement | null;
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e: Event) => {
-            e.preventDefault();
-            alert('Obrigado pela sua mensagem! Em um ambiente real, isso seria enviado para um servidor.');
-            contactForm.reset();
+    const form = document.querySelector('form') as HTMLFormElement;
+form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nome = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const conteudo = (document.getElementById('message') as HTMLTextAreaElement).value;
+
+    const payload = { nome, email, conteudo };
+
+    try {
+        const res = await fetch('https://localhost:5001/api/formulario', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
         });
+
+        if (res.ok) {
+            alert('Mensagem enviada com sucesso!');
+            form.reset();
+        } else {
+            alert('Erro ao enviar mensagem');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Erro de conexão com o servidor');
     }
+});
 });
