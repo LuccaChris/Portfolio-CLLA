@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
 
-// Habilita CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirFrontend", policy =>
