@@ -13,9 +13,9 @@
     <div class="container mx-auto px-4 py-8 max-w-5xl">
         <!-- Print Button -->
         <div class="flex justify-end mb-6 no-print">
-            <button onclick="window.print()"
+            <button onclick="downloadcv()"
                 class="print-button bg-teal-900 hover:bg-teal-800 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
-                <i class="fas fa-print"></i> Imprimir CV
+                <i class="fas fa-print"></i> Download CV
             </button>
         </div>
 
@@ -72,7 +72,7 @@
 
                     <div class="space-y-8">
                         <!-- Current Job -->
-                        <div class="timeline-item pb-6 border dorder-teal-400 ">
+                        <div class="timeline-item pb-6  ">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-2 ">
                                 <h4 class="font-semibold text-lg">Rodonaves Transportes e Encomendas LTDA</h4>
                                 <span class="text-teal-600 font-medium text-sm md:text-base">Setembro de 2023
@@ -155,7 +155,7 @@
                     <div class="space-y-4">
                         <div>
                             <h4 class="font-medium">Superior em Análise e Desenvolvimento de Sistemas</h4>
-                            <p class="text-teal-600 text-sm">Cursando</p>
+                            <p class="text-teal-600 text-sm">Completo</p>
                         </div>
                         <div>
                             <h4 class="font-medium">Ensino Médio</h4>
@@ -253,30 +253,18 @@
     </div>
 
     <script>
-        // Add animation on scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('.section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(section);
-            });
-        });
+          // button to download CV as PDF
+        function downloadcv() {
+        const link = document.createElement('a');
+        link.href = '/assets/curriculo/Currículo Christian 2025.pdf'; // caminho correto
+        link.download = 'Christian_Amaral_Curriculo.pdf'; // nome que será salvo
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
     </script>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'93fefa1fe17bf1a7',t:'MTc0NzI3Mzc0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
-    <iframe height="1" width="1"
-        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
 </body>
+
 
 </html>
