@@ -21,4 +21,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+app.MapGet("/", () => "✅ API do Portfolio-CLLA está rodando!");
+
 app.Run();
