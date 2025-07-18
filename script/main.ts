@@ -38,7 +38,7 @@ form?.addEventListener('submit', async (e) => {
     const payload = { nome, email, conteudo };
 
     try {
-        const res = await fetch('https://localhost:5001/api/formulario', {
+        const res = await fetch('https://portfolio-clla.onrender.com/api/formulario', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -57,4 +57,21 @@ form?.addEventListener('submit', async (e) => {
         alert('Erro de conexão com o servidor');
     }
 });
+});
+
+function downloadcv(): void {
+    const link = document.createElement('a');
+    link.href = 'assets/curriculo/Currículo Christian 2025.pdf'; // caminho correto no seu projeto
+    link.download = 'Christian_Amaral_Curriculo.pdf'; // nome do arquivo ao baixar
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Exemplo: conectar com o botão via id
+document.addEventListener("DOMContentLoaded", () => {
+    const downloadButton = document.getElementById('btn-download-cv');
+    if (downloadButton) {
+        downloadButton.addEventListener('click', downloadcv);
+    }
 });

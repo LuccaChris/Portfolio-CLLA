@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, fetch('https://localhost:5001/api/formulario', {
+                    return [4 /*yield*/, fetch('https://portfolio-clla.onrender.com/api/formulario', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -100,4 +100,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }); });
+});
+function downloadcv() {
+    var link = document.createElement('a');
+    link.href = 'assets/curriculo/Currículo Christian 2025.pdf'; // caminho correto no seu projeto
+    link.download = 'Christian_Amaral_Curriculo.pdf'; // nome do arquivo ao baixar
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+// Exemplo: conectar com o botão via id
+document.addEventListener("DOMContentLoaded", function () {
+    var downloadButton = document.getElementById('btn-download-cv');
+    if (downloadButton) {
+        downloadButton.addEventListener('click', downloadcv);
+    }
 });
