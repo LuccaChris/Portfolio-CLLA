@@ -23,3 +23,5 @@ EXPOSE 80
 
 # Ponto de entrada da aplicação
 ENTRYPOINT ["dotnet", "backend.dll"]
+
+
