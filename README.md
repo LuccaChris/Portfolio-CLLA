@@ -7,7 +7,7 @@ Desenvolvido para apresentar minhas habilidades, experiências e informações d
 📬 Ao preencher o formulário de contato, uma mensagem é **enviada automaticamente** para bots do **Telegram** e **WhatsApp**.
 
 🔗 **Acesse o portfólio online:**  
-👉 [Portfolio-CLLA](https://luccachris.github.ioPortfolio-CLLA/)
+👉 [Portfolio-CLLA](https://luccachris.github.io/Portfolio-CLLA/)
 ---
 
 ## 🛠️ Tecnologias Utilizadas
