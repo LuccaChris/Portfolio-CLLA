@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TmuX3RORMxU=",
+  "dgSpecHash": "brt6LK8ew70=",
   "success": true,
-  "projectFilePath": "C:\\Users\\207.cllamaral\\Documents\\Nova-pasta--5-\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\207.cllamaral\\Documents\\Nova pasta\\Portfolio-CLLA\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\207.cllamaral\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.18\\microsoft.aspnetcore.openapi.8.0.18.nupkg.sha512",
     "C:\\Users\\207.cllamaral\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
