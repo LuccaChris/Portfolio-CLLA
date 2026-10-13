@@ -1,3 +1,4 @@
+!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -6,22 +7,17 @@
     <title>Christian Amaral - Currículo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/cv_style.css">
+    <link rel="stylesheet" href="../css/cv_style.css">
 </head>
 
 <body>
     <div class="container mx-auto px-4 py-8 max-w-5xl">
         <!-- Print Button -->
         <div class="flex justify-between mb-6 no-print">
-            <button class="btn bg-teal-900 hover:bg-teal-800 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
-                <a href="https://luccachris.github.io/Portfolio-CLLA/" class=" btn items-center gap-2  ">
-                <i class="btn fas fa-arrow-left"></i> voltar
-                </a>
-            </button>
-            <button onclick="downloadcv()"
-                class="print-button bg-teal-900 hover:bg-teal-800 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
-                <i class="fas fa-print"></i> Download CV
-            </button>
+            <a href="../index.html" class="bg-teal-900 text-white px-4 py-2 rounded-lg">← Voltar ao portfólio</a>
+            <a href="../assets/curriculo/Currículo Christian 2025.pdf" download="Christian_Amaral_Curriculo.pdf"
+                class="print-button bg-teal-900 hover:bg-teal-800 text-white px-4 py-2 rounded-lg flex items-center gap-2"><i
+                    class="fas fa-download" aria-hidden="true"></i> Baixar currículo PDF</a>
         </div>
 
         <!-- Header -->
@@ -29,7 +25,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold mb-2">Christian Amaral</h1>
-                    <h2 class="text-xl md:text-2xl font-medium opacity-90">Development</h2>
+                    <h2 class="text-xl md:text-2xl font-medium opacity-90">Desenvolvedor C# / ASP.NET Core</h2>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex items-center gap-3">
@@ -253,11 +249,11 @@
 
         <!-- Footer -->
         <footer class="mt-8 text-center text-gray-500 text-sm no-print">
-            <p>© 2025 Christian Amaral - Currículo</p>
+            <p>© <span data-current-year>2026</span> Christian Amaral - Currículo</p>
         </footer>
     </div>
 
-<script src="/script/main.js"></script>
+    <script src="../script/main.js"></script>
 
 </body>
 

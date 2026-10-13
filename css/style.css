@@ -61,3 +61,28 @@ p {
   height: 224px;
   border-radius: 31% 31% 20% 20%;
 }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #31534f;
+}
+
+.project-label {
+  color: #5eead4;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+  color: #99f6e4;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
