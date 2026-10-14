@@ -91,7 +91,7 @@
 
                     <div class="md:w-1/2 flex justify-center">
                         <div
-                            class="CardIMGPF bg-linear-to-br from-teal-950 to-teal-900/10 flex items-center justify-center">
+                            class="CardIMGPF bg-gradient-to-br from-teal-950 to-teal-900/10 flex items-center justify-center">
 
                             <img src="assets/profile.webp" alt="Foto de Christian Amaral" class="IMGPF shadow-lg"
                                 fetchpriority="high">
@@ -231,52 +231,164 @@
             </div>
         </section>
 
-        <section id="projetos" class="py-16 bg-teal-950">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">Meus Projetos</h2>
+        <section id="projetos" class="py-20 bg-teal-950">
+            <div class="container mx-auto px-4 max-w-6xl">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                    <article class="card project-card p-6"><span class="project-label">PROJETO</span>
-                        <h3 class="text-xl font-bold mb-3">Editor JSON</h3>
-                        <p class="text-gray-300 mb-6">Validador de JSON para conferir a estrutura de documentos e apoiar
-                            tarefas
-                            do dia a dia.</p>
-                        <div class="project-links">
-                            <a href="https://luccachris.github.io/EditorJson/">Abrir demonstração</a>
-                            <a href="https://github.com/LuccaChris/EditorJson"
-                                aria-label="Ver código de Editor JSON">Ver código
-                                →</a>
-                        </div>
-                    </article>
-                    <article class="card project-card p-6"><span class="project-label">PROJETO</span>
-                        <h3 class="text-xl font-bold mb-3">Site organizacional</h3>
-                        <p class="text-gray-300 mb-6">Projeto de site institucional com demonstração disponível para
-                            navegação.
-                        </p>
-                        <div class="project-links"><a href="https://luccachris.github.io/ippf/">Abrir demonstração</a>
-                            <a href="https://github.com/LuccaChris/ippf"
-                                aria-label="Ver código de Site organizacional">Ver
-                                código →</a>
-                        </div>
-                    </article>
-                    <article class="card project-card p-6"><span class="project-label">PROJETO</span>
-                        <h3 class="text-xl font-bold mb-3">CLLA Store</h3>
-                        <p class="text-gray-300 mb-6">Projeto de e-commerce. Consulte o repositório para conhecer a
-                            implementação e o estágio de desenvolvimento.</p>
-                        <div class="project-links"><a href="https://github.com/LuccaChris/CLLA-Store"
-                                aria-label="Ver código de CLLA Store">Ver código →</a>
-                        </div>
-                    </article>
-                    <article class="card project-card p-6"><span class="project-label">PROJETO</span>
-                        <h3 class="text-xl font-bold mb-3">Sistema de finanças</h3>
-                        <p class="text-gray-300 mb-6">Projeto voltado ao controle de finanças, com código disponível
-                            para
-                            análise.</p>
-                        <div class="project-links"><a href="https://github.com/LuccaChris/CLA-FinancesSystem"
-                                aria-label="Ver código de Sistema de finanças">Ver código →</a>
-                        </div>
-                    </article>
+                <!-- Cabeçalho -->
+                <div class="projects-header">
+                    <div>
+                        <span class="projects-subtitle">PORTFÓLIO</span>
+                        <h2 class="text-3xl font-bold">Meus Projetos</h2>
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button id="projectPrev" type="button" aria-label="Projeto anterior" class="carousel-button">
+                            ←
+                        </button>
+
+                        <button id="projectNext" type="button" aria-label="Próximo projeto" class="carousel-button">
+                            →
+                        </button>
+                    </div>
                 </div>
+
+                <!-- Carrossel -->
+                <div id="projectCarousel" class="projects-carousel">
+
+                    <!-- Editor JSON -->
+                    <article class="project-card carousel-card">
+
+                        <div class="project-top">
+                            <span class="project-label">PROJETO 01</span>
+
+                            <span class="project-icon">
+                                { }
+                            </span>
+                        </div>
+
+                        <h3>Editor JSON</h3>
+
+                        <p>
+                            Validador de JSON para conferir a estrutura de documentos
+                            e apoiar tarefas do dia a dia.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="https://luccachris.github.io/EditorJson/" target="_blank"
+                                rel="noopener noreferrer">
+                                Ver projeto ↗
+                            </a>
+
+                            <a href="https://github.com/LuccaChris/EditorJson" target="_blank"
+                                rel="noopener noreferrer">
+                                GitHub →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Site organizacional -->
+                    <article class="project-card carousel-card">
+
+                        <div class="project-top">
+                            <span class="project-label">PROJETO 02</span>
+
+                            <span class="project-icon">
+                                ◇
+                            </span>
+                        </div>
+
+                        <h3>Site organizacional</h3>
+
+                        <p>
+                            Projeto de site institucional com demonstração
+                            disponível para navegação.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="https://luccachris.github.io/ippf/" target="_blank" rel="noopener noreferrer">
+                                Ver projeto ↗
+                            </a>
+
+                            <a href="https://github.com/LuccaChris/ippf" target="_blank" rel="noopener noreferrer">
+                                GitHub →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CLLA Store -->
+                    <article class="project-card carousel-card">
+
+                        <div class="project-top">
+                            <span class="project-label">PROJETO 03</span>
+
+                            <span class="project-icon">
+                                ◫
+                            </span>
+                        </div>
+
+                        <h3>CLLA Store</h3>
+
+                        <p>
+                            Projeto de e-commerce com foco em experiência
+                            do usuário e desenvolvimento web.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="https://github.com/LuccaChris/CLLA-Store" target="_blank"
+                                rel="noopener noreferrer">
+                                GitHub →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Finanças -->
+                    <article class="project-card carousel-card">
+
+                        <div class="project-top">
+                            <span class="project-label">PROJETO 04</span>
+
+                            <span class="project-icon">
+                                $
+                            </span>
+                        </div>
+
+                        <h3>Sistema de finanças</h3>
+
+                        <p>
+                            Sistema voltado ao controle financeiro,
+                            organização de dados e acompanhamento de movimentações.
+                        </p>
+
+                        <div class="project-links">
+
+                            <a href="https://github.com/LuccaChris/CLA-FinancesSystem" target="_blank"
+                                rel="noopener noreferrer">
+                                GitHub →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- Indicador -->
+                <div class="carousel-progress">
+                    <div id="carouselProgress" class="carousel-progress-bar"></div>
+                </div>
+
             </div>
         </section>
 

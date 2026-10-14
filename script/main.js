@@ -8,21 +8,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const setMenu = (open) => {
         if (!menu || !toggle)
             return;
-        if (open)
+        if (open) {
             previousOverflow = document.body.style.overflow;
+        }
         menu.classList.toggle("hidden", !open);
         menu.classList.toggle("flex", open);
         toggle.setAttribute("aria-expanded", String(open));
         document.body.style.overflow = open ? "hidden" : previousOverflow;
-        if (main)
+        if (main) {
             main.inert = open;
+        }
         (open ? close : toggle)?.focus();
     };
-    toggle?.addEventListener("click", () => setMenu(true));
-    close?.addEventListener("click", () => setMenu(false));
-    menu
-        ?.querySelectorAll("a")
-        .forEach((link) => link.addEventListener("click", () => setMenu(false)));
+    toggle?.addEventListener("click", () => {
+        setMenu(true);
+    });
+    close?.addEventListener("click", () => {
+        setMenu(false);
+    });
+    menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            setMenu(false);
+        });
+    });
     document.addEventListener("keydown", (event) => {
         if (!menu || menu.classList.contains("hidden"))
             return;
@@ -32,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (event.key === "Tab") {
             const items = Array.from(menu.querySelectorAll("button, a[href]"));
-            const first = items[0], last = items[items.length - 1];
+            const first = items[0];
+            const last = items[items.length - 1];
             if (event.shiftKey && document.activeElement === first) {
                 event.preventDefault();
                 last?.focus();
@@ -46,19 +55,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window
         .matchMedia("(min-width: 768px)")
         .addEventListener("change", (event) => {
-        if (event.matches && menu && !menu.classList.contains("hidden"))
+        if (event.matches && menu && !menu.classList.contains("hidden")) {
             setMenu(false);
+        }
     });
-    document
-        .querySelectorAll("[data-current-year]")
-        .forEach((el) => (el.textContent = String(new Date().getFullYear())));
+    document.querySelectorAll("[data-current-year]").forEach((el) => {
+        el.textContent = String(new Date().getFullYear());
+    });
     const form = document.querySelector("#contact-form");
     const status = document.querySelector("#form-status");
     let sending = false;
     form?.addEventListener("submit", async (event) => {
         event.preventDefault();
-        if (sending || !form.reportValidity() || !status)
+        if (sending || !form.reportValidity() || !status) {
             return;
+        }
         const data = new FormData(form);
         const payload = {
             nome: String(data.get("nome") ?? "").trim(),
@@ -84,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(form.dataset.apiUrl, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                },
                 body: JSON.stringify(payload),
                 signal: controller.signal,
             });
@@ -112,5 +125,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.textContent = "Enviar Mensagem";
             }
         }
+    });
+    const projectCarousel = document.querySelector("#projectCarousel");
+    const projectPrev = document.querySelector("#projectPrev");
+    const projectNext = document.querySelector("#projectNext");
+    const carouselProgress = document.querySelector("#carouselProgress");
+    const getProjectScrollAmount = () => {
+        if (!projectCarousel)
+            return 0;
+        const card = projectCarousel.querySelector(".carousel-card");
+        if (!card)
+            return 0;
+        const styles = window.getComputedStyle(projectCarousel);
+        const gap = parseFloat(styles.gap) || 24;
+        return card.offsetWidth + gap;
+    };
+    projectNext?.addEventListener("click", () => {
+        projectCarousel?.scrollBy({
+            left: getProjectScrollAmount(),
+            behavior: "smooth",
+        });
+    });
+    projectPrev?.addEventListener("click", () => {
+        projectCarousel?.scrollBy({
+            left: -getProjectScrollAmount(),
+            behavior: "smooth",
+        });
+    });
+    projectCarousel?.addEventListener("scroll", () => {
+        if (!projectCarousel || !carouselProgress) {
+            return;
+        }
+        const maxScroll = projectCarousel.scrollWidth - projectCarousel.clientWidth;
+        if (maxScroll <= 0) {
+            carouselProgress.style.transform = "translateX(0%)";
+            return;
+        }
+        const progress = projectCarousel.scrollLeft / maxScroll;
+        carouselProgress.style.transform = `translateX(${progress * 300}%)`;
     });
 });
